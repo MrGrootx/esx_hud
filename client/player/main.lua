@@ -10,7 +10,7 @@ function HUD:GetJobLabel()
     end
 
     local dutySuffix = ESX.PlayerData.job.onDuty and "" or Translate("job_off_duty")
-    return string.format("%s - %s%s", ESX.PlayerData.job.label, ESX.PlayerData.job.grade_label, dutySuffix)
+    return string.format("%s - %s %s", ESX.PlayerData.job.label, ESX.PlayerData.job.grade_label, dutySuffix)
 end
 function HUD:GetLocation()
     local PPos = GetEntityCoords(ESX.PlayerData.ped)
