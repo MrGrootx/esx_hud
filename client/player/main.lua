@@ -8,9 +8,8 @@ function HUD:GetJobLabel()
         return ESX.PlayerData.job.label
     end
 
-    return string.format("%s - %s", ESX.PlayerData.job.label, ESX.PlayerData.job.grade_label)
+    return string.format("%s - %s", ESX.PlayerData.job.onDuty and ESX.PlayerData.job.label or ("OFF " .. ESX.PlayerData.job.label), ESX.PlayerData.job.grade_label)
 end
-
 function HUD:GetLocation()
     local PPos = GetEntityCoords(ESX.PlayerData.ped)
     local streetHash = GetStreetNameAtCoord(PPos.x, PPos.y, PPos.z)
